@@ -1,0 +1,269 @@
+/* Global reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Quicksand", sans-serif;
+}
+
+/* Header navi */
+ul {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+}
+
+li {
+  display: inline;
+  float: center;
+}
+
+li a {
+  color: whitesmoke;
+  padding: 0px 10px;
+  font-size: 13px;
+}
+
+li a:hover {
+  color: lightpink;
+}
+
+/* flexbox container (main/banner) */
+.flex-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-text {
+  font-size: 10px;
+  color: white;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.banner-img {
+  width: 50%;
+  height: 100px;
+  background-image: url("Pics/m1.JPG");
+  background-size: cover;
+  background-position: center;
+  border-radius: 25px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45);
+  margin-bottom: 10px;
+}
+
+/* Sections */
+.section-card {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-card:hover .section-img {
+  opacity: 0.7;
+  transition: 0.5s;
+}
+
+.section-link {
+  color: white;
+  position: absolute;
+}
+
+.section-link:hover {
+  color: lightpink;
+  transition: 0.5s;
+  font-size: 20px;
+}
+
+.section-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.img-1 {
+  background-image: url("Pics/m2.JPG");
+}
+
+.img-2 {
+  background-image: url("Pics/m3.JPG");
+}
+
+.img-3 {
+  background-image: url("Pics/m4.JPG");
+}
+
+/* Form */
+
+.section4 {
+  margin: 10px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  background: rgb(250, 210, 217);
+  border: 2px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-size: 8px;
+}
+
+/* Footer */
+.footer-copyright {
+  margin: 5px 0px;
+  text-align: center;
+  font-size: 8px;
+}
+
+/* Layout */
+.grid-container {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.2fr 1fr 1fr 1fr 1fr 0.5fr 0.1fr;
+  grid-template-areas:
+    "h"
+    "m"
+    "s1"
+    "s2"
+    "s3"
+    "s4"
+    "f";
+}
+
+.header {
+  background: rgb(250, 210, 217);
+  grid-area: h;
+}
+
+.main {
+  background: rgb(250, 210, 217);
+  grid-area: m;
+}
+
+.section1 {
+  background: rgb(250, 210, 217);
+  grid-area: s1;
+}
+
+.section2 {
+  background: rgb(250, 210, 217);
+  grid-area: s2;
+}
+
+.section3 {
+  background: rgb(250, 210, 217);
+  grid-area: s3;
+}
+
+.section4 {
+  background: white;
+  grid-area: s4;
+}
+
+.footer {
+  background: rgb(250, 210, 217);
+  grid-area: f;
+}
+
+/* Mediaqueries */
+@media only screen and (min-width: 768px) {
+  body,
+  h1 {
+    font-size: 33px;
+  }
+
+  body,
+  p {
+    font-size: 20px;
+  }
+
+  li a {
+    font-size: 20px;
+  }
+
+  ul {
+    padding: 15px 0px;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .banner-text {
+    padding: 0px 15px;
+  }
+
+  .banner-img {
+    height: 240px;
+    margin-right: 7px;
+    margin-bottom: 15px;
+  }
+
+  .button {
+    font-size: 10px;
+  }
+
+  .footer-copyright {
+    font-size: 10px;
+    margin-top: 5px;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 0.45fr 0.8fr 0.8fr 0.8fr 0.8fr 0.05fr;
+    grid-template-areas:
+      "h h h h"
+      "m m m m"
+      "s1 s1 s2 s2"
+      "s1 s1 s3 s3"
+      "s4 s4 s3 s3"
+      "f f f f";
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .grid-container {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 0.2fr 0.5fr 0.75fr 0.25fr 0.09fr;
+      grid-template-areas:
+        "h h h"
+        "m m m"
+        "s1 s2 s3"
+        "s1 s4 s3"
+        "f f f";
+    }
+
+    .banner-text {
+      padding-right: 100px;
+    }
+
+    .banner-img {
+      height: 290px;
+    }
+
+    .footer-copyright {
+      margin-top: 8px;
+    }
+  }
+}
